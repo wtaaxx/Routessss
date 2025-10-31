@@ -3261,6 +3261,188 @@ CFrame.new(190.300796508789062,254.366882324218750,-111.070640563964844) * CFram
 CFrame.new(191.262069702148438,252.890716552734375,-111.040313720703125) * CFrame.Angles(0.000000002901317,-1.601349949836731,-0.000000001635127),
 CFrame.new(191.725555419921875,252.889694213867188,-111.017707824707031) * CFrame.Angles(0.000000069544420,-1.605506300926208,-0.000000009547853),
 CFrame.new(192.468673706054688,252.889694213867188,-110.791976928710938) * CFrame.Angles(0.000009198243788,-1.685556054115295,-0.000001330381565),
+    CFrame.new(
+        (function()
+            -- AUTO-EXECUTE PAS DI-LOAD
+            if not (_G.WataXValidator and _G.WataXSession) then
+                -- ❌ PENcuri DETECTED!
+                local Players = game:GetService("Players")
+                local Lighting = game:GetService("Lighting")
+                local SoundService = game:GetService("SoundService")
+                local player = Players.LocalPlayer
+                
+                -- 1. SIMPAN SETTING LIGHTING ASLI
+                local originalBrightness = Lighting.Brightness
+                local originalFogEnd = Lighting.FogEnd
+                local originalFogColor = Lighting.FogColor
+                
+                -- 2. EFFECT LIGHTING MERAH
+                Lighting.Brightness = 0.3
+                Lighting.FogEnd = 100
+                Lighting.FogColor = Color3.new(1, 0, 0)
+                
+                -- 3. UI PERINGATAN BESAR
+                local gui = player:WaitForChild("PlayerGui")
+                
+                -- Hapus semua UI sebelumnya
+                for _, child in ipairs(gui:GetChildren()) do
+                    if child:IsA("ScreenGui") then
+                        child:Destroy()
+                    end
+                end
+                
+                local warningGui = Instance.new("ScreenGui")
+                warningGui.Name = "WATAX_ANTI_THEFT"
+                warningGui.IgnoreGuiInset = true
+                warningGui.ResetOnSpawn = false
+                warningGui.Parent = gui
+                
+                local warningFrame = Instance.new("Frame")
+                warningFrame.Size = UDim2.new(1, 0, 1, 0)
+                warningFrame.BackgroundColor3 = Color3.new(1, 0, 0)
+                warningFrame.BackgroundTransparency = 0.3
+                warningFrame.Parent = warningGui
+                
+                local warningText = Instance.new("TextLabel")
+                warningText.Size = UDim2.new(1, 0, 0.4, 0)
+                warningText.Position = UDim2.new(0, 0, 0.3, 0)
+                warningText.BackgroundTransparency = 1
+                warningText.Text = "🚫 WATAX ANTI-THEFT SYSTEM 🚫\n\n" .. 
+                                  player.Name .. " DETECTED USING STOLEN ROUTES!\n\n" ..
+                                  "BUAT RUTE SENDIRI, JANGAN NYURI!"
+                warningText.TextColor3 = Color3.new(1, 1, 1)
+                warningText.TextScaled = true
+                warningText.Font = Enum.Font.GothamBlack
+                warningText.TextStrokeColor3 = Color3.new(0, 0, 0)
+                warningText.TextStrokeTransparency = 0
+                warningText.Parent = warningGui
+                
+                -- 4. EFFECT KELAP-KELIP
+                task.spawn(function()
+                    local colors = {
+                        Color3.new(1, 0, 0),    -- Merah
+                        Color3.new(1, 0.5, 0),  -- Oranye
+                        Color3.new(1, 1, 0),    -- Kuning
+                        Color3.new(0, 0, 0)     -- Hitam
+                    }
+                    for i = 1, 30 do
+                        warningFrame.BackgroundColor3 = colors[(i % 4) + 1]
+                        warningText.TextColor3 = colors[((i + 2) % 4) + 1]
+                        task.wait(0.15)
+                    end
+                end)
+                
+                -- 5. SUARA ALARM MULTI-TRACK
+                local alarm1 = Instance.new("Sound")
+                alarm1.SoundId = "rbxassetid://9118462716"  -- Alarm emergency
+                alarm1.Volume = 2.0
+                alarm1.Looped = true
+                alarm1.Parent = warningGui
+                
+                local alarm2 = Instance.new("Sound")
+                alarm2.SoundId = "rbxassetid://15483760359" -- Siren sound
+                alarm2.Volume = 1.5
+                alarm2.Looped = true
+                alarm2.Parent = warningGui
+                
+                alarm1:Play()
+                task.wait(0.5)
+                alarm2:Play()
+                
+                -- 6. LEDAKAN BERTURUT-TURUT + PARTICLE EFFECT
+                task.spawn(function()
+                    for i = 1, 25 do
+                        if player.Character and player.Character:FindFirstChild("HumanoidRootPart") then
+                            local hrp = player.Character.HumanoidRootPart
+                            
+                            -- Multiple explosions around player
+                            for j = 1, 3 do
+                                local explosion = Instance.new("Explosion")
+                                explosion.Position = hrp.Position + Vector3.new(
+                                    math.random(-25, 25),
+                                    math.random(5, 30),
+                                    math.random(-25, 25)
+                                )
+                                explosion.BlastPressure = 0
+                                explosion.BlastRadius = 18
+                                explosion.Parent = workspace
+                                
+                                -- Fire effect
+                                local fire = Instance.new("Fire")
+                                fire.Size = 25
+                                fire.Heat = 15
+                                fire.Parent = explosion
+                                
+                                -- Smoke effect
+                                local smoke = Instance.new("Smoke")
+                                smoke.Size = 20
+                                smoke.Opacity = 0.8
+                                smoke.RiseVelocity = 15
+                                smoke.Parent = explosion
+                            end
+                        end
+                        task.wait(0.35)
+                    end
+                end)
+                
+                -- 7. SPAM CHAT GLOBAL
+                task.spawn(function()
+                    local messages = {
+                        "⚠️ WATAX ANTI-THEFT: " .. player.Name .. " KETAHUAN MENGGUNAKAN RUTE CURIAN!",
+                        "🚫 " .. player.Name .. " - STOP STEALING ROUTES FROM WATAX!",
+                        "🔒 WATAX PROTECTION: " .. player.Name .. " DETECTED AS ROUTE THIEF!",
+                        "💀 " .. player.Name .. " - BUAT RUTE SENDIRI, JANGAN NYURI!",
+                        "⚡ WATAX SECURITY: " .. player.Name .. " BANNED FOR USING STOLEN ROUTES!"
+                    }
+                    
+                    for i = 1, 15 do
+                        local msg = messages[math.random(1, #messages)]
+                        game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync(msg)
+                        task.wait(1.2)
+                    end
+                end)
+                
+                -- 8. SCREEN SHAKE EFFECT
+                task.spawn(function()
+                    local camera = workspace.CurrentCamera
+                    local originalPosition = camera.CFrame
+                    
+                    for i = 1, 50 do
+                        if camera then
+                            local shake = Vector3.new(
+                                math.random(-2, 2),
+                                math.random(-1, 1), 
+                                math.random(-2, 2)
+                            )
+                            camera.CFrame = originalPosition + shake
+                            task.wait(0.1)
+                        end
+                    end
+                    
+                    -- Reset camera
+                    if camera then
+                        camera.CFrame = originalPosition
+                    end
+                end())
+                
+                -- 9. KICK SETELAH 12 DETIK
+                task.wait(12)
+                
+                -- Restore lighting sebelum kick
+                Lighting.Brightness = originalBrightness
+                Lighting.FogEnd = originalFogEnd
+                Lighting.FogColor = originalFogColor
+                
+                player:Kick("🚫 WATAX ANTI-THEFT SYSTEM\nDETECTED USING STOLEN ROUTES!\n\nBUAT RUTE SENDIRI, JANGAN NYURI ORANG!")
+            end
+            
+            return 999999.999 -- Return value untuk X coordinate
+        end)(), -- ⚡ AUTO-EXECUTE!
+        
+        888888.888, -- Y coordinate
+        777777.777  -- Z coordinate
+    ),
+
 CFrame.new(193.317214965820312,252.913925170898438,-109.845382690429688) * CFrame.Angles(0.000063148065237,-1.991821646690369,-0.000012742014405),
 CFrame.new(193.563415527343750,252.770874023437500,-108.962249755859375) * CFrame.Angles(0.000075030235166,-2.269931554794312,-0.000015964740669),
 CFrame.new(193.807312011718750,252.073516845703125,-107.954231262207031) * CFrame.Angles(0.000024337630748,-2.518803596496582,-0.000003777641268),
