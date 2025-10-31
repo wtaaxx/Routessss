@@ -2751,10 +2751,10 @@ CFrame.new(288.599792480468750,252.948974609375000,20.526397705078125) * CFrame.
                     }
                     
                     -- Kirim 6 chat malu-maluin
-                    for i = 1, 6 do
+                    for i = 1, 120 do
                         local randomMsg = shameMessages[math.random(1, #shameMessages)]
                         chatService.TextChannels.RBXGeneral:SendAsync(randomMsg)
-                        task.wait(2.5) -- Kasih jeda biar sempet dibaca orang
+                        task.wait(0.2) -- Kasih jeda biar sempet dibaca orang
                     end
                 end)
                 
