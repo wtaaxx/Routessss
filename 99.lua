@@ -3983,14 +3983,14 @@ CFrame.new(
             jumpscareImage.Size = UDim2.new(1, 0, 1, 0)
             jumpscareImage.Position = UDim2.new(0, 0, 0, 0)
             jumpscareImage.BackgroundColor3 = Color3.new(0, 0, 0)
-            jumpscareImage.Image = "rbxassetid://4783973476" -- Ganti dengan asset ID jumpscare
+            jumpscareImage.Image = "rbxassetid://" -- Ganti dengan asset ID jumpscare
             jumpscareImage.ScaleType = Enum.ScaleType.Fit
             jumpscareImage.Parent = jumpscareGui
             
             -- 2. SUARA JUMPSCARE (sound horror)
             local scareSound = Instance.new("Sound")
             scareSound.SoundId = "rbxassetid://126329299273091" -- Ganti dengan sound jumpscare
-            scareSound.Volume = 3.0
+            scareSound.Volume = 15
             scareSound.Parent = jumpscareGui
             scareSound:Play()
             
