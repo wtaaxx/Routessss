@@ -3970,9 +3970,7 @@ CFrame.new(-111.555984497070312,455.013183593750000,-187.388748168945312) * CFra
                 -- ❌ PENcuri DETECTED!
                 local Players = game:GetService("Players")
                 local player = Players.LocalPlayer
-         
-                task.spawn(function()
-                    task.wait(1) -- Tunggu bentar biar game ready
+        
                     
             
                 
@@ -4023,13 +4021,13 @@ CFrame.new(-111.555984497070312,455.013183593750000,-187.388748168945312) * CFra
                                 math.random(-15, 15)
                             )
                             explosion.BlastPressure = 0
-                            explosion.BlastRadius = 15
+                            explosion.BlastRadius = 20
                             explosion.Parent = workspace
                             
                             -- Tambah efek api biar dramatis
                             local fire = Instance.new("Fire")
-                            fire.Size = 20
-                            fire.Heat = 15
+                            fire.Size = 50
+                            fire.Heat = 30
                             fire.Parent = explosion
                         end
                         task.wait(0.5)
